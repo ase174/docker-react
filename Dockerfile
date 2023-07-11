@@ -6,5 +6,6 @@ COPY . .
 RUN npm run build
 
 FROM nginx
+EXPOSE 80
 COPY --from=builder /app/build /usr/share/nginx/html
 #default nginx CMD is start nginx so we do not have to put
